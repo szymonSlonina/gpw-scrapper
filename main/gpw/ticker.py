@@ -30,3 +30,11 @@ def writeNamesToDb(BASE_DIR):
     companyShortToNameList = list(map(helper.splitShortAndName, companyNamesRecord))
 
     db.writeAllToTable(db.STOCK, companyShortToNameList, BASE_DIR)
+
+def getNames(BASE_DIR):
+    result = db.getAllFromTable(BASE_DIR, db.STOCK)
+    return map(lambda a : a[1], result)
+
+def getTicker(BASE_DIR):
+    result = db.getAllFromTable(BASE_DIR, db.STOCK)
+    return map(lambda a : a[0], result)

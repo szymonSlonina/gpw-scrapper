@@ -8,4 +8,7 @@ BASE_DIR = os.getcwd()
 db.setupDB(BASE_DIR)
 
 ticker.writeNamesToDb(BASE_DIR)
+for row in ticker.getNames(BASE_DIR):
+    print(row)
+    break
 

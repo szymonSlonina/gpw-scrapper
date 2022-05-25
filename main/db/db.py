@@ -4,6 +4,8 @@ import sqlite3
 
 STOCK = "STOCK"
 STOCK_INDICATORS = "STOCK_INDICATORS"
+NAME = "NAME"
+TICKER = "TICKER"
 
 
 def setupDB(BASE_DIR):
@@ -44,7 +46,14 @@ def setup():
 
 def writeAllToTable(dbName, tickerNameList, BASE_DIR):
     con = sqlite3.connect(os.sep.join([BASE_DIR, "db", "example.db"]))
-    con.executemany("insert into " + dbName + " values (?, ?, '')", tickerNameList)
+    cur = con.cursor()
+    cur.executemany('insert into ' + dbName + ' values (?, ?, "")', tickerNameList)
+    con.commit()
     con.close()
-    print(dbName)
-    print(tickerNameList)
+
+def getAllFromTable(BASE_DIR, tableName):
+    con = sqlite3.connect(os.sep.join([BASE_DIR, "db", "example.db"]))
+    cur = con.cursor()
+    result = cur.execute("select * from " + tableName).fetchall()
+    con.close()
+    return result
