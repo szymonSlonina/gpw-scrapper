@@ -7,8 +7,7 @@ BASE_DIR = os.getcwd()
 
 db.setupDB(BASE_DIR)
 
-ticker.writeNamesToDb(BASE_DIR)
-for row in ticker.getNames(BASE_DIR):
-    print(row)
-    break
+#ticker.writeNamesToDb(BASE_DIR) #this is for writing names/tickers to db. start only once.
+tickers = ticker.getNames(BASE_DIR)
 
+print(list(tickers)[0])

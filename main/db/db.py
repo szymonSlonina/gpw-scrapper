@@ -14,11 +14,11 @@ def setupDB(BASE_DIR):
         dbExists = True
     con = sqlite3.connect(os.sep.join([BASE_DIR, "db", "example.db"]))
     if not dbExists:
-        setup()
+        setup(con)
     con.close()
 
 
-def setup():
+def setup(con):
     con.execute('''CREATE TABLE stock (
                     ticker TEXT NOT NULL,
                     name TEXT,

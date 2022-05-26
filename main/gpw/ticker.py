@@ -33,8 +33,8 @@ def writeNamesToDb(BASE_DIR):
 
 def getNames(BASE_DIR):
     result = db.getAllFromTable(BASE_DIR, db.STOCK)
-    return map(lambda a : a[1], result)
+    return list(map(lambda a : a[1], result))
 
 def getTicker(BASE_DIR):
     result = db.getAllFromTable(BASE_DIR, db.STOCK)
-    return map(lambda a : a[0], result)
+    return list(map(lambda a : a[0], result))
