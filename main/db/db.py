@@ -57,3 +57,6 @@ def getAllFromTable(BASE_DIR, tableName):
     result = cur.execute("select * from " + tableName).fetchall()
     con.close()
     return result
+
+def writeShareStats(stats, BASE_DIR):
+    pass
