@@ -1,2 +1,5 @@
 MARKET_VALUE_INDICATOR_PREFIX = "https://www.biznesradar.pl/wskazniki-wartosci-rynkowej/"
 GPW_STOCK_NAMES_URL = "https://www.biznesradar.pl/gielda/akcje_gpw"
+PROFITABILITY_VALUE_INDICATOR_PREFIX = "https://www.biznesradar.pl/wskazniki-rentownosci/"
+RATING_INDICATOR_PREFIX = "https://www.biznesradar.pl/rating/"
+DIVIDEND_HISTORY_RATING_VAR_URL = "https://strefainwestorow.pl/notowania/gpw/{ticker}/dywidendy"
